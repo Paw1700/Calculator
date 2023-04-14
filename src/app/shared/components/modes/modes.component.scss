@@ -1,37 +1,35 @@
-.bar{
-    border-top: 1px solid #979797;
-    border-bottom: 1px solid #979797;
-    width: 100vw;
-    height: 6.12vh;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: center;
-    flex-wrap: nowrap;
+.bar {
+	border-top: 1px solid #979797;
+	border-bottom: 1px solid #979797;
+	width: 100vw;
+	height: 6.12vh;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	align-items: center;
+	flex-wrap: nowrap;
+	div {
+		&:first-of-type {
+			margin-inline: 3.81vw;
+			margin-left: 0;
+		}
+		width: 7.08vw;
+		height: 5vh;
+		margin-inline: 3.81vw;
+		background-position: center;
+		background-size: contain;
+		background-repeat: no-repeat;
+	}
 }
-
-.bar div:first-of-type{
-    margin-inline: 3.81vw;
-    margin-left: 0;
+.lengthConv {
+	background-image: url(/assets/UI/ICON/SHARED/MODES/length.webp);
 }
-
-.bar div{
-    width: 7.08vw;
-    height: 5vh;
-    margin-inline: 3.81vw;
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
+.tempConv {
+	background-image: url(/assets/UI/ICON/SHARED/MODES/temp.webp);
 }
-
-.lengthConv{
-    background-image: url(/assets/UI/ICON/SHARED/MODES/length.webp);
+.calculator {
+	background-image: url(/assets/UI/ICON/SHARED/MODES/calculator.webp);
 }
-
-.tempConv{
-    background-image: url(/assets/UI/ICON/SHARED/MODES/temp.webp);
-}
-
-.calculator{
-    background-image: url(/assets/UI/ICON/SHARED/MODES/calculator.webp);
+.time {
+    background-image: url(/assets/UI/ICON/SHARED/MODES/time.webp);
 }

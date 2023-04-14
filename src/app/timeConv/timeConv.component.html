@@ -1,0 +1,11 @@
+<div class="timeConv">
+    <div class="timeView">
+        <convertedItem *ngFor="let unit of Units; let x = index" [item]="unit" [index]="x" (itemChoosed)="unitChoosed($event)"></convertedItem>
+    </div>
+    <div class="modes">
+        <modes></modes>
+    </div>
+    <div class="numKeyboard">
+        <numKeyboard (btnClicked)="buttonClicked($event)"></numKeyboard>
+    </div>
+</div>
