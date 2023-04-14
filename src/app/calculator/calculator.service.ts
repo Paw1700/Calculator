@@ -225,7 +225,7 @@ export class CalculatorService implements OnDestroy {
         if (move !== 'result') { // RESULT SENT VALUE TO SCREEN BY HIMSELF
             this.screen.next(this.moveTable.join(','));
         }
-        this.showVar(); // DEV VARIABLES SHOW
+        // this.showVar(); // DEV VARIABLES SHOW
     }
 
     private moveTableNotEmpty(): boolean {
