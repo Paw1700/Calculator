@@ -1,0 +1,30 @@
+.lengthConv{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 100vw;
+    height: 99vh;
+}
+
+.lengthsView{
+    width: 100vw;
+    height: 61vh;
+    overflow-y: scroll;
+}
+
+.numKeyboard{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+}
+
+/* .backButton{
+    width: 8vw;
+    height: 45.68vw;
+    background-image: url(/assets/UI/ICON/LENGTHCONV/returnArrow.webp);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin: 1.71vw;
+} */

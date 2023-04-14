@@ -1,0 +1,29 @@
+<div class="operationsBlock">
+    <div class="advancedMathOperations">
+        <div class="button"><span class="xPowerOf">x</span><span class="powerOf">n</span></div>
+        <div class="button" (click)="this.cS.buttonClicked('powerOf3')"><span class="xPowerOf">x</span><span class="powerOf">3</span></div>
+        <div class="button" (click)="this.cS.buttonClicked('powerOf2')"><span class="xPowerOf">x</span><span class="powerOf">2</span></div>
+    
+        <div class="button"><img class="sqrtImage" src="/assets/UI/ICON/CALCULATOR/OPERATIONS/sqrtOfPowerN.webp" alt="sqrt_image"></div>
+        <div class="button" (click)="this.cS.buttonClicked('cbrt')"><img class="sqrtImage" src="/assets/UI/ICON/CALCULATOR/OPERATIONS/sqrtOfPower3.webp" alt="sqrt_image"></div>
+        <div class="button" (click)="this.cS.buttonClicked('sqrt')"><img class="sqrtImage" src="/assets/UI/ICON/CALCULATOR/OPERATIONS/sqrt.webp" alt="sqrt_image"></div>
+    
+        <div class="button"></div>
+        <div class="button" (click)="this.cS.buttonClicked('divide1Of')"><img class="divided1Of" src="/assets/UI/ICON/CALCULATOR/OPERATIONS/1divideX.webp" alt="sqrt_image"></div>
+        <div class="button" (click)="this.cS.buttonClicked('factorial')">x!</div>
+    
+        <div class="button"></div>
+        <div class="button" (click)="this.cS.buttonClicked('bracketLeft')">(</div>
+        <div class="button" (click)="this.cS.buttonClicked('bracketRight')">)</div>
+    </div>
+    <div class="operations">
+        <div class="button plusMinus" (click)="this.cS.buttonClicked('plusMinus')"></div>
+        <div class="button" (click)="this.cS.buttonClicked('percent')">%</div>
+        <div class="button" (click)="this.cS.buttonClicked('divide')">÷</div>
+        <div class="button" (click)="this.cS.buttonClicked('times')">×</div>
+        <div class="button" (click)="this.cS.buttonClicked('minus')">-</div>
+        <div class="button" (click)="this.cS.buttonClicked('plus')">+</div>
+        <div class="button" (click)="this.cS.buttonClicked('AC')">AC</div>
+        <div class="button" (click)="this.cS.buttonClicked('result')">=</div>
+    </div>
+</div>

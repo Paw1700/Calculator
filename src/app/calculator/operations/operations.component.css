@@ -1,0 +1,51 @@
+.operationsBlock{
+    display: flex;
+    flex-direction: row;
+}
+
+.advancedMathOperations{
+    display: grid;
+    grid-template-columns: repeat(3, 11.42vw);
+}
+
+.operations{
+    display: grid;
+    grid-template-columns: repeat(2, 11.42vw);
+}
+
+.button {
+    width: 11.42vw;
+    height: 11.42vw;
+    /* border: 1px solid #979797; */
+    font-size: 6.34vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.xPowerOf{
+    position: relative;
+    left: 0.75vw;
+}
+
+.powerOf{
+    position: relative;
+    font-size: 0.5em;
+    top: -3.17vw;
+    left: 0.75vw;
+}
+
+.sqrtImage{
+    width: 65%;
+}
+
+.divided1Of{
+    height: 65%;
+}
+
+.plusMinus{
+    background-image: url(/assets/UI/ICON/CALCULATOR/KEYBOARD/plusMinus.webp);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 55%;
+}

@@ -1,0 +1,23 @@
+.calculator{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 100vw;
+    height: 99vh;
+}
+
+.equation{
+    width: 100vw;
+    height: 61vh;
+}
+
+.calcButtons{
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    justify-content: flex-end;
+}
+
+.keyboard{
+    border-left: 1px solid #979797;
+}

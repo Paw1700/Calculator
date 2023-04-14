@@ -1,0 +1,11 @@
+<div class="lengthConv">
+    <div class="lengthsView">
+        <convertedItem *ngFor="let oneItem of Units; let ind = index" [item]="oneItem" [index]="ind" (itemChoosed)="unitChoosed($event)" ></convertedItem>
+    </div>
+    <div class="modes">
+        <modes></modes>
+    </div>
+    <div class="numKeyboard">
+        <numKeyboard (btnClicked)="buttonClicked($event)"></numKeyboard>
+    </div>
+</div>
