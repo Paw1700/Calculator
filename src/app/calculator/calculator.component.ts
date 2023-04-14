@@ -4,7 +4,7 @@ import { CalculatorService } from "./calculator.service";
 @Component({
     selector: 'calculator',
     templateUrl: './calculator.component.html',
-    styleUrls: ['./calculator.component.css']
+    styleUrls: ['./calculator.component.scss']
 })
 export class CalculatorComponent implements OnDestroy{
     constructor(private cS:CalculatorService) {}

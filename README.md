@@ -5,8 +5,9 @@ PWA app calculator with built in units converter.
 ## Technologies
 
 * Angular 15
+* TypeScript
 * HTML
-* CSS
+* SCSS
 
 ## Purpose of creating an app
 

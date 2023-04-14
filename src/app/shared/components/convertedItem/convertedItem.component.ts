@@ -4,7 +4,7 @@ import { ConvertedItem } from "../../models/convertedItem.model";
 @Component({
     selector: 'convertedItem',
     templateUrl: './convertedItem.component.html',
-    styleUrls: ['./convertedItem.component.css']
+    styleUrls: ['./convertedItem.component.scss']
 })
 export class ConvertedItemComponent{
     @Input() item: ConvertedItem = new ConvertedItem(false, '', '', '');

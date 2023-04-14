@@ -5,7 +5,7 @@ import { Subscription } from "rxjs";
 @Component({
     selector: 'equation',
     templateUrl: './equation.component.html',
-    styleUrls: ['./equation.component.css'],
+    styleUrls: ['./equation.component.scss'],
 })
 export class EquationComponent implements OnDestroy {
     displayedNumber: string = '';

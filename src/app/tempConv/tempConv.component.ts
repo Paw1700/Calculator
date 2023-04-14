@@ -5,7 +5,7 @@ import { animate, state, style, transition, trigger } from "@angular/animations"
 @Component({
     selector: 'tempConv',
     templateUrl: './tempConv.component.html',
-    styleUrls: ['./tempConv.component.css'],
+    styleUrls: ['./tempConv.component.scss'],
     animations: [
         trigger('warnTemp', [
             transition("void => *", [

@@ -4,7 +4,7 @@ import { ConvertedItem } from "../shared/models/convertedItem.model";
 @Component({
     selector: 'lengthConv',
     templateUrl: './lengthConv.component.html',
-    styleUrls: ['./lengthConv.component.css']
+    styleUrls: ['./lengthConv.component.scss']
 })
 export class LengthConverterComponent {
     Units: ConvertedItem[] = [
