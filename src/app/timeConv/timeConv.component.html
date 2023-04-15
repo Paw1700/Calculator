@@ -1,6 +1,6 @@
 <div class="timeConv">
     <div class="timeView">
-        <convertedItem *ngFor="let unit of Units; let x = index" [item]="unit" [index]="x" (itemChoosed)="unitChoosed($event)"></convertedItem>
+        <convertedItem *ngFor="let unit of Units; let x = index" [item]="unit" (click)="unitChoosed(x)"></convertedItem>
     </div>
     <div class="modes">
         <modes></modes>
