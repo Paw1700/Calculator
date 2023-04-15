@@ -1,0 +1,11 @@
+<div class="powerConv">
+    <div class="powerView">
+        <convertedItem *ngFor="let unit of Units; let x = index" [item]="unit"></convertedItem>
+    </div>
+    <div class="modes">
+        <modes></modes>
+    </div>
+    <div class="numKeyboard">
+        <numKeyboard (btnClicked)="buttonClicked($event)"></numKeyboard>
+    </div>
+</div>

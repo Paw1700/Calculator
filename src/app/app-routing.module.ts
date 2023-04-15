@@ -8,12 +8,15 @@ import { TemperatureConverterModule } from "./tempConv/tempConv.module";
 import { TemperatureConverterComponent } from "./tempConv/tempConv.component";
 import { TimeConverterModule } from "./timeConv/timeConv.module";
 import { TimeConverterComponent } from "./timeConv/timeConv.component";
+import { PowerConverterModule } from "./powerConv/powerConv.module";
+import { PowerConverterComponent } from "./powerConv/powerConv.component";
 
 const route: Routes = [
     { path: 'calculator', component: CalculatorComponent },
     { path: 'length', component: LengthConverterComponent },
     { path: 'temperature', component: TemperatureConverterComponent },
     { path: 'time', component: TimeConverterComponent },
+    { path: 'power', component: PowerConverterComponent },
     { path: '**', pathMatch: 'full', redirectTo: 'calculator' }
 ]
 
@@ -23,6 +26,7 @@ const route: Routes = [
         LengthConverterModule,
         TemperatureConverterModule,
         TimeConverterModule,
+        PowerConverterModule,
 
         RouterModule.forRoot(route),
     ],
