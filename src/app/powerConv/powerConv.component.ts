@@ -97,6 +97,7 @@ export class PowerConverterComponent {
                     console.error('Transistion to Universal Unit ERROR!!!');
                     break;
             }
+            console.log('_____________');
             for (let unit of this.Units) {
                 let convertedValue = 0;
                 switch (unit.symbol) {
@@ -125,7 +126,7 @@ export class PowerConverterComponent {
                         console.error('Transision from UniValue to Converted Value ERROR!!!');
                         break;
                 }
-                let precision = 0;
+                let precision = 4;
                 let beforeComma = convertedValue.toString().split('.')[0];
                 let afterComma = convertedValue.toString().split('.')[1];
                 if (afterComma !== undefined) {
@@ -153,7 +154,6 @@ export class PowerConverterComponent {
                         precision = numIndex;
                     }
                 }
-                // console.log(unit.symbol + " " + convertedValue+" "+afterComma);
                 if(afterComma !== undefined && precision !== 0){
                     unit.value = beforeComma + "." + afterComma.substring(0,precision);
                 } else {
