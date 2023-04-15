@@ -8,10 +8,4 @@ import { ConvertedItem } from "../../models/convertedItem.model";
 })
 export class ConvertedItemComponent{
     @Input() item: ConvertedItem = new ConvertedItem(false, '', '', '');
-    @Input() index: number = 0;
-    @Output() itemChoosed = new EventEmitter<number>();
-
-    choose(){
-        this.itemChoosed.emit(this.index);
-    }
 }
