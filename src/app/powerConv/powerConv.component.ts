@@ -19,6 +19,8 @@ export class PowerConverterComponent {
     private choosedUnitIndex: number = 0;
     private value: string = '';
 
+    
+
     buttonClicked(move: string) {
         if (this.value === '0') {// SETTING EMPTY VALUE FOR START
             this.value = '';
