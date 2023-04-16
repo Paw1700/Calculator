@@ -7,6 +7,9 @@ import { ConvertedItem } from "../shared/models/convertedItem.model";
     styleUrls: ['./powerConv.component.scss']
 })
 export class PowerConverterComponent {
+    
+
+    /* OLD SOLUTION
     Units: ConvertedItem[] = [
         new ConvertedItem(true, 'Petawaty', '0', 'PW'),
         new ConvertedItem(false, 'Terrawaty', '0', 'TW'),
@@ -167,4 +170,5 @@ export class PowerConverterComponent {
             }
         }
     }
+    */
 }

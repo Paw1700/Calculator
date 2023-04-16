@@ -1,17 +1,17 @@
 <div class="tempConv">
-    <div class="tempView">
+    <!-- <div class="tempView">
         <convertedItem *ngFor="let oneUnit of Units; let x = index" (click)="unitChoosed(x)" [item]="oneUnit"></convertedItem>
     </div>
     <div [@warnTemp]="this.unpossibleTemp" class="unpossibleTemp" *ngIf="this.unpossibleTemp">
         Nie istnieje temperatura nizsza niz 0 Kelwinów !!!
-    </div>
+    </div> -->
     <div class="modes">
         <modes></modes>
     </div>
     <div class="numKeyboard">
         <div class="anotherFun">
-            <div class="button plusMinus" (click)="buttonClicked('plusMinus')"></div>
+            <!-- <div class="button plusMinus" (click)="buttonClicked('plusMinus')"></div> -->
         </div>
-        <numKeyboard (btnClicked)="buttonClicked($event)"></numKeyboard>
+        <!-- <numKeyboard (btnClicked)="buttonClicked($event)"></numKeyboard> -->
     </div>
 </div>

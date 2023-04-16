@@ -7,6 +7,7 @@ import { ConvertedItem } from "../shared/models/convertedItem.model";
     styleUrls: ['./lengthConv.component.scss']
 })
 export class LengthConverterComponent {
+    /*
     Units: ConvertedItem[] = [
         new ConvertedItem(true, 'Mil', '0', 'mil'),
         new ConvertedItem(false, 'Mil morskich', '0', 'nmil'),
@@ -184,5 +185,6 @@ export class LengthConverterComponent {
             }
         }
     }
+    */
 }
 

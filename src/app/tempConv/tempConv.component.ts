@@ -28,6 +28,7 @@ import { animate, state, style, transition, trigger } from "@angular/animations"
     ]
 })
 export class TemperatureConverterComponent {
+    /*
     Units: ConvertedItem[] = [
         new ConvertedItem(true, 'Celcjusz', '0', 'C'),
         new ConvertedItem(false, 'Faranhaiet', '32', 'F'),
@@ -156,4 +157,5 @@ export class TemperatureConverterComponent {
         }
 
     }
+    */
 }

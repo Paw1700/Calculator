@@ -7,5 +7,5 @@ import { ConvertedItem } from "../../models/convertedItem.model";
     styleUrls: ['./convertedItem.component.scss']
 })
 export class ConvertedItemComponent{
-    @Input() item: ConvertedItem = new ConvertedItem(false, '', '', '');
+    @Input() item: ConvertedItem = new ConvertedItem(false, false, 0, '', '', 0);
 }

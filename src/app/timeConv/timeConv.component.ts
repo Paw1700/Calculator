@@ -7,6 +7,7 @@ import { ConvertedItem } from "../shared/models/convertedItem.model";
     styleUrls: ['./timeConv.component.scss']
 })
 export class TimeConverterComponent {
+    /*
     public Units: ConvertedItem[] = [
         new ConvertedItem(true, 'Sekund', '0', 's'),
         new ConvertedItem(false, 'Minut', '0', 'min'),
@@ -156,4 +157,5 @@ export class TimeConverterComponent {
             }
         }
     }
+    */
 }
