@@ -1,6 +1,6 @@
 <div class="converter">
     <div class="convertedUnitsList">
-        <convertedItem *ngFor="let unit of Units[0].units" [item]="unit"></convertedItem>
+        <convertedItem *ngFor="let unit of Units[indexOfWantedTypeUnit].units" [item]="unit"></convertedItem>
     </div>
     <div class="modes">
         <modes></modes>

@@ -22,7 +22,7 @@ export class ConverterComponent implements OnInit {
                     new ConvertedItem(false, false, 1000000000, 'Gigawat', 'GW', 0),
                     new ConvertedItem(false, false, 1000000, 'Megawat', 'MW', 0),
                     new ConvertedItem(false, false, 1000, 'Kilowat', 'kW', 0),
-                    new ConvertedItem(false, true, 1, 'Kilowat', 'W', 0),
+                    new ConvertedItem(false, true, 1, 'Wat', 'W', 0),
                     new ConvertedItem(false, false, 0.0013596216, 'Konie mechaniczne', 'KM', 0),
                 ]
             }
@@ -36,16 +36,7 @@ export class ConverterComponent implements OnInit {
 
     ngOnInit(): void {
         this.convserionType = this.route.snapshot.paramMap.get('conversionType');
-        console.log(this.Units);
-        this.indexOfWantedTypeUnit = this.Units.findIndex(
-            unit => {
-                unit.unitType === 'power';
-            }
-        );
-
-        console.log(this.convserionType);
-
-        console.log(this.indexOfWantedTypeUnit);
+        this.indexOfWantedTypeUnit = this.Units.findIndex(unit => unit.unitType === this.convserionType);
     }
 
     buttonClicked(moveByUser: string) {
@@ -80,14 +71,12 @@ export class ConverterComponent implements OnInit {
         }
         switch (this.convserionType) {
             case 'power':
-                let indexOfUniversalUnit = this.Units[this.indexOfWantedTypeUnit].units.findIndex(
-                    unit => {
-                        unit.universalValue === true;
-                    }
-                )
-                let universalValue = this.Units[this.indexOfWantedTypeUnit].units[indexOfUniversalUnit].convert('toUniversal', +this.value);
+                let indexOfChoosedUnit = this.Units[this.indexOfWantedTypeUnit].units.findIndex(unit => unit.active === true)
+                let universalValue = this.Units[this.indexOfWantedTypeUnit].units[indexOfChoosedUnit].convert('toUniversal', +this.value);
                 for (let unit of this.Units[this.indexOfWantedTypeUnit].units) {
                     unit.value = unit.convert('toUnit', universalValue);
+                    console.log(unit.value);
+                    
                 }
                 break;
         }
