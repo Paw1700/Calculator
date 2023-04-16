@@ -10,16 +10,15 @@ export class ConvertedItem{
         public value: number,
     ) {}
 
-    convert(convertMode: convertMode,givenValue: number): void | number{
+    convert(convertMode: convertMode,givenValue: number): number{
         switch(convertMode){
             case 'toUnit':
-                    this.value = givenValue / this.ratioToUniversalValue;
-                break;
+                    return (givenValue / this.ratioToUniversalValue);
             case 'toUniversal':
-                    return givenValue * this.ratioToUniversalValue;
+                    return (givenValue * this.ratioToUniversalValue);
             default:
                 console.error('Error in conversion in ConvertedItemModel !!!');
-                break;
+                return 0;
         }
     }
 }
