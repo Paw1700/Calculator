@@ -3,7 +3,7 @@
         <convertedItem *ngFor="let unit of Units[indexOfWantedTypeUnit].units; let x = index" (click)="changeUnit(x)" [item]="unit"></convertedItem>
     </div>
     <div class="modes">
-        <modes></modes>
+        <modes (chLoc)="changeType($event)"></modes>
     </div>
     <div class="keyboard">
         <div class="anotherFun">

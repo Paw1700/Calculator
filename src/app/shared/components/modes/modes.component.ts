@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, EventEmitter, Output } from "@angular/core";
 
 @Component({
     selector: 'modes',
@@ -6,5 +6,10 @@ import { Component } from "@angular/core";
     styleUrls: ['./modes.component.scss']
 })
 export class ModesComponent{
+    @Output() chLoc = new EventEmitter<string>();
 
+    emitChLog(convType: string){
+        this.chLoc.emit(convType);
+        // window.location.reload();
+    }
 }
