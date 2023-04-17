@@ -12,9 +12,25 @@
     overflow-y: scroll;
 }
 
+.button {
+    width: 11.42vw;
+    height: 11.42vw;
+    font-size: 6.34vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .keyboard {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: flex-end;
+}
+
+.plusMinus{
+    background-image: url(/assets/UI/ICON/CALCULATOR/KEYBOARD/plusMinus.webp);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 55%;
 }

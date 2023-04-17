@@ -6,6 +6,9 @@
         <modes></modes>
     </div>
     <div class="keyboard">
+        <div class="anotherFun">
+            <div *ngIf="allowMinus" class="button plusMinus" (click)="buttonClicked('plusMinus')"></div>
+        </div>
         <numKeyboard (btnClicked)="buttonClicked($event)"></numKeyboard>
     </div>
 </div>

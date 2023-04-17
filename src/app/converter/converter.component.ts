@@ -12,10 +12,12 @@ import { ConvertedItem } from "../shared/models/convertedItem.model";
 export class ConverterComponent implements OnInit {
     Units: {
         unitType: string,
+        allowMinus: boolean,
         units: ConvertedItem[]
     }[] = [
             {
                 unitType: "power",
+                allowMinus: false,
                 units: [
                     new ConvertedItem(true, false, 1000000000000000, 'Petawat', 'PW', 0),
                     new ConvertedItem(false, false, 1000000000000, 'Terrawat', 'TW', 0),
@@ -31,12 +33,14 @@ export class ConverterComponent implements OnInit {
     value = '0';
     convserionType: string | null = 'power';
     indexOfWantedTypeUnit = 0;
+    allowMinus = false;
 
     constructor(private route: ActivatedRoute) { }
 
     ngOnInit(): void {
         this.convserionType = this.route.snapshot.paramMap.get('conversionType');
         this.indexOfWantedTypeUnit = this.Units.findIndex(unit => unit.unitType === this.convserionType);
+        this.allowMinus = this.Units[this.indexOfWantedTypeUnit].allowMinus;
     }
 
     buttonClicked(moveByUser: string) {
@@ -68,13 +72,16 @@ export class ConverterComponent implements OnInit {
                     }
                 }
                 break;
+            case 'plusMinus':
+                this.value = (+this.value * -1).toString();
+                break;
         }
         switch (this.convserionType) {
             case 'power':
                 let indexOfChoosedUnit = this.Units[this.indexOfWantedTypeUnit].units.findIndex(unit => unit.active === true)
                 let universalValue = this.Units[this.indexOfWantedTypeUnit].units[indexOfChoosedUnit].convert('toUniversal', +this.value);
                 for (let unit of this.Units[this.indexOfWantedTypeUnit].units) {
-                    unit.value = unit.convert('toUnit', universalValue);
+                    unit.value = Math.round(unit.convert('toUnit', universalValue) * 1e4) / 1e4;
                 }
                 break;
         }
