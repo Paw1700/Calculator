@@ -10,6 +10,7 @@
     width: 100vw;
     height: 61vh;
     overflow-y: scroll;
+    position: relative;
 }
 
 .button {
@@ -46,4 +47,6 @@
     align-content: center;
     justify-content: center;
     align-items: center;
+    position: absolute;
+    bottom: 0;
 }
