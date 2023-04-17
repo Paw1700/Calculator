@@ -3,7 +3,7 @@ export type convertMode = 'toUniversal' | 'toUnit';
 export class ConvertedItem {
     constructor(
         public active: boolean,
-        public universalValue: boolean,
+        public universalUnit: boolean,
         public ratioToUniversalValue: number,
         public addToUniversalValue: boolean,
         public addToUniVerNumber: number,
