@@ -19,26 +19,35 @@ export class ConverterComponent implements OnInit {
                 unitType: "power",
                 allowMinus: false,
                 units: [
-                    new ConvertedItem(true, false, 1000000000000000, 'Petawat', 'PW', 0),
-                    new ConvertedItem(false, false, 1000000000000, 'Terrawat', 'TW', 0),
-                    new ConvertedItem(false, false, 1000000000, 'Gigawat', 'GW', 0),
-                    new ConvertedItem(false, false, 1000000, 'Megawat', 'MW', 0),
-                    new ConvertedItem(false, false, 1000, 'Kilowat', 'kW', 0),
-                    new ConvertedItem(false, true, 1, 'Wat', 'W', 0),
-                    new ConvertedItem(false, false, 735.8351729213, 'Konie mechaniczne', 'KM', 0),
+                    new ConvertedItem(true, false, 1000000000000000, false, 0, 'Petawat', 'PW', 0),
+                    new ConvertedItem(false, false, 1000000000000, false, 0, 'Terrawat', 'TW', 0),
+                    new ConvertedItem(false, false, 1000000000, false, 0, 'Gigawat', 'GW', 0),
+                    new ConvertedItem(false, false, 1000000, false, 0, 'Megawat', 'MW', 0),
+                    new ConvertedItem(false, false, 1000, false, 0, 'Kilowat', 'kW', 0),
+                    new ConvertedItem(false, true, 1, false, 0, 'Wat', 'W', 0),
+                    new ConvertedItem(false, false, 735.8351729213, false, 0, 'Konie mechaniczne', 'KM', 0),
                 ]
             },
             {
                 unitType: 'time',
                 allowMinus: false,
                 units: [
-                    new ConvertedItem(true, true, 1, 'Sekund', 's', 0),
-                    new ConvertedItem(false, false, 60, 'Minuta', 'min', 0),
-                    new ConvertedItem(false, false, 3600, 'Godzin', 'h', 0),
-                    new ConvertedItem(false, false, 86400, 'Dni', 'd', 0),
-                    new ConvertedItem(false, false, 604800, 'Tygodni', 't', 0),
-                    new ConvertedItem(false, false, 2419200, 'Miesiąc', 'm', 0),
-                    new ConvertedItem(false, false, 29030400, 'Lat', 'y', 0),
+                    new ConvertedItem(true, true, 1, false, 0, 'Sekund', 's', 0),
+                    new ConvertedItem(false, false, 60, false, 0, 'Minuta', 'min', 0),
+                    new ConvertedItem(false, false, 3600, false, 0, 'Godzin', 'h', 0),
+                    new ConvertedItem(false, false, 86400, false, 0, 'Dni', 'd', 0),
+                    new ConvertedItem(false, false, 604800, false, 0, 'Tygodni', 't', 0),
+                    new ConvertedItem(false, false, 2419200, false, 0, 'Miesiąc', 'm', 0),
+                    new ConvertedItem(false, false, 29030400, false, 0, 'Lat', 'y', 0),
+                ]
+            },
+            {
+                unitType: 'temperature',
+                allowMinus: true,
+                units: [
+                    new ConvertedItem(true, true, 1, false, 0, 'Kelwin', 'K', 0),
+                    new ConvertedItem(false, false, 1, true, -273.15, 'Cecjusza', 'C', -273.15),
+                    new ConvertedItem(false, false, 1.8, true, -459.67, 'Faranhaiet', 'F', -459.67),
                 ]
             }
         ]
@@ -56,10 +65,12 @@ export class ConverterComponent implements OnInit {
     }
 
     changeType(conversionType: string | null) {
-        if(conversionType !== null){
+        if (conversionType !== null) {
             this.indexOfWantedTypeUnit = this.Units.findIndex(unit => unit.unitType === conversionType);
+
             this.allowMinus = this.Units[this.indexOfWantedTypeUnit].allowMinus;
-            let indexOfActivUnit = this.Units[this.indexOfWantedTypeUnit].units.findIndex(unit => unit.active)
+            let indexOfActivUnit = this.Units[this.indexOfWantedTypeUnit].units.findIndex(unit => unit.active);
+            // console.log(indexOfActivUnit);
             this.value = (this.Units[this.indexOfWantedTypeUnit].units[indexOfActivUnit].value).toString();
         }
     }
@@ -99,11 +110,12 @@ export class ConverterComponent implements OnInit {
         }
         switch (this.convserionType) {
             case 'time':
+            case 'temperature':
             case 'power':
                 let indexOfChoosedUnit = this.Units[this.indexOfWantedTypeUnit].units.findIndex(unit => unit.active === true)
                 let universalValue = this.Units[this.indexOfWantedTypeUnit].units[indexOfChoosedUnit].convert('toUniversal', +this.value);
                 for (let unit of this.Units[this.indexOfWantedTypeUnit].units) {
-                    unit.value = Math.round(unit.convert('toUnit', universalValue) * 1e4) / 1e4;
+                    unit.value = Math.round(unit.convert('toUnit', universalValue) * 1e2) / 1e2;
                 }
                 break;
         }
