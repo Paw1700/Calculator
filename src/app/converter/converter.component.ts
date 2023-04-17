@@ -1,13 +1,34 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { ConvertedItem } from "../shared/models/convertedItem.model";
+import { trigger, transition, style, animate } from "@angular/animations";
 
 // type Move = '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | '0' | 'return' | 'comma'
 
 @Component({
     selector: 'converter',
     templateUrl: './converter.component.html',
-    styleUrls: ['./converter.component.scss']
+    styleUrls: ['./converter.component.scss'],
+    animations: [
+        trigger('warnTemp', [
+            transition("void => *", [
+                style({
+                    opacity: 0,
+                    height: '0'
+                }),
+                animate('250ms ease-in', style({
+                    opacity: 1,
+                    height: '5vh'
+                }))
+            ]),
+            transition("* => void", [
+                animate('250ms ease-out', style({
+                    opacity: 0,
+                    height: '0'
+                }))
+            ])
+        ])
+    ]
 })
 export class ConverterComponent implements OnInit {
     Units: {
@@ -45,7 +66,7 @@ export class ConverterComponent implements OnInit {
                 unitType: 'temperature',
                 allowMinus: true,
                 units: [
-                    new ConvertedItem(true, true, 1, false, 0, 'Kelwin', 'K', 0),
+                    new ConvertedItem(true, true, 1, false, 0, 'Kelwin', 'K', 0, true, 'Nie istnieje temperatura nizsza niz 0 Kelwinow!'),
                     new ConvertedItem(false, false, 1, true, -273.15, 'Cecjusza', 'C', -273.15),
                     new ConvertedItem(false, false, 1.8, true, -459.67, 'Faranhaiet', 'F', -459.67),
                 ]
@@ -56,6 +77,8 @@ export class ConverterComponent implements OnInit {
     convserionType: string | null = '';
     indexOfWantedTypeUnit = 0;
     allowMinus = false;
+    minusForbiddenWarning = false;
+    forbiddenMessage:string | undefined = '';
 
     constructor(private route: ActivatedRoute) { }
 
@@ -116,6 +139,13 @@ export class ConverterComponent implements OnInit {
                 let universalValue = this.Units[this.indexOfWantedTypeUnit].units[indexOfChoosedUnit].convert('toUniversal', +this.value);
                 for (let unit of this.Units[this.indexOfWantedTypeUnit].units) {
                     unit.value = Math.round(unit.convert('toUnit', universalValue) * 1e2) / 1e2;
+                    if(unit.minusForbidden && unit.value < 0 && !this.minusForbiddenWarning){
+                        this.minusForbiddenWarning = true;
+                        this.forbiddenMessage = unit.forbiddenMessage;
+                    } else if (unit.minusForbidden && unit.value >= 0 && this.minusForbiddenWarning){
+                        this.minusForbiddenWarning = false;
+                        this.forbiddenMessage = '';
+                    }
                 }
                 break;
         }

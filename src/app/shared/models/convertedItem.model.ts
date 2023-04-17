@@ -10,6 +10,8 @@ export class ConvertedItem {
         public name: string,
         public symbol: string,
         public value: number,
+        public minusForbidden?: boolean,
+        public forbiddenMessage?: string,
     ) { }
 
     convert(convertMode: convertMode, givenValue: number): number {

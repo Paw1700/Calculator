@@ -1,6 +1,9 @@
 <div class="converter">
     <div class="convertedUnitsList">
         <convertedItem *ngFor="let unit of Units[indexOfWantedTypeUnit].units; let x = index" (click)="changeUnit(x)" [item]="unit"></convertedItem>
+        <div [@warnTemp]="this.minusForbiddenWarning" class="minusForbiddenWarning" *ngIf="this.minusForbiddenWarning">
+            {{ this.forbiddenMessage }}
+        </div>
     </div>
     <div class="modes">
         <modes (convType)="changeType($event)"></modes>
