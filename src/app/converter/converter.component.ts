@@ -23,7 +23,7 @@ export class ConverterComponent implements OnInit {
                     new ConvertedItem(false, false, 1000000, 'Megawat', 'MW', 0),
                     new ConvertedItem(false, false, 1000, 'Kilowat', 'kW', 0),
                     new ConvertedItem(false, true, 1, 'Wat', 'W', 0),
-                    new ConvertedItem(false, false, 0.0013596216, 'Konie mechaniczne', 'KM', 0),
+                    new ConvertedItem(false, false, 735.8351729213, 'Konie mechaniczne', 'KM', 0),
                 ]
             }
         ]
@@ -75,14 +75,19 @@ export class ConverterComponent implements OnInit {
                 let universalValue = this.Units[this.indexOfWantedTypeUnit].units[indexOfChoosedUnit].convert('toUniversal', +this.value);
                 for (let unit of this.Units[this.indexOfWantedTypeUnit].units) {
                     unit.value = unit.convert('toUnit', universalValue);
-                    console.log(unit.value);
-                    
                 }
                 break;
         }
         if (this.value === '') { // RETURNING 0 FOR STRING
             this.value = '0';
         }
+    }
+
+    changeUnit(id: number): void{
+        let oldUnitId = this.Units[this.indexOfWantedTypeUnit].units.findIndex(unit => unit.active === true);
+        this.Units[this.indexOfWantedTypeUnit].units[oldUnitId].active = false;
+        this.Units[this.indexOfWantedTypeUnit].units[id].active = true;
+        this.value = '';
     }
 }
 
