@@ -38,6 +38,7 @@ export class ConverterComponent implements OnInit {
                     new ConvertedItem(false, false, 86400, 'Dni', 'd', 0),
                     new ConvertedItem(false, false, 604800, 'Tygodni', 't', 0),
                     new ConvertedItem(false, false, 2419200, 'Miesiąc', 'm', 0),
+                    new ConvertedItem(false, false, 29030400, 'Lat', 'y', 0),
                 ]
             }
         ]
