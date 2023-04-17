@@ -1,7 +1,7 @@
 <div class="bar">
     <div [routerLink]="['./calculator']" class="calculator"></div>
-    <div (click)="emitChLog('length')" [routerLink]="['/converter/length']" class="lengthConv"></div>
-    <div (click)="emitChLog('temperature')" [routerLink]="['/converter/temperature']" class="tempConv"></div>
-    <div (click)="emitChLog('time')" [routerLink]="['/converter/time']" class="time"></div>
-    <div (click)="emitChLog('power')" [routerLink]="['/converter/power']" class="power"></div>
+    <div (click)="chConvType('length')" [routerLink]="['/converter/length']" class="lengthConv"></div>
+    <div (click)="chConvType('temperature')" [routerLink]="['/converter/temperature']" class="tempConv"></div>
+    <div (click)="chConvType('time')" [routerLink]="['/converter/time']" class="time"></div>
+    <div (click)="chConvType('power')" [routerLink]="['/converter/power']" class="power"></div>
 </div>

@@ -51,13 +51,16 @@ export class ConverterComponent implements OnInit {
 
     ngOnInit(): void {
         this.convserionType = this.route.snapshot.params['conversionType'];
+        this.changeType(this.convserionType);
     }
 
-    changeType(conversionType: string) {
-        this.indexOfWantedTypeUnit = this.Units.findIndex(unit => unit.unitType === conversionType);
-        this.allowMinus = this.Units[this.indexOfWantedTypeUnit].allowMinus;
-        let indexOfActivUnit = this.Units[this.indexOfWantedTypeUnit].units.findIndex(unit => unit.active)
-        this.value = (this.Units[this.indexOfWantedTypeUnit].units[indexOfActivUnit].value).toString();
+    changeType(conversionType: string | null) {
+        if(conversionType !== null){
+            this.indexOfWantedTypeUnit = this.Units.findIndex(unit => unit.unitType === conversionType);
+            this.allowMinus = this.Units[this.indexOfWantedTypeUnit].allowMinus;
+            let indexOfActivUnit = this.Units[this.indexOfWantedTypeUnit].units.findIndex(unit => unit.active)
+            this.value = (this.Units[this.indexOfWantedTypeUnit].units[indexOfActivUnit].value).toString();
+        }
     }
 
     buttonClicked(moveByUser: string) {
