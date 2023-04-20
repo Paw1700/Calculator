@@ -86,16 +86,16 @@ export class CalculatorComponent {
                 if (!this.gottenResult) {
                     this.result = eval(this.convertToEquation(this.moveTable));
                     // this.screen.next(this.result.toString());
-                    this.displayedEq = this.result.toString();
-                } else {
+                } else if(this.moveTable[this.moveTable.length - 2] !== undefined) {
                     let tempMoveTable: string[] = [this.result.toString()];
-
+                    
                     tempMoveTable.push(this.moveTable[this.moveTable.length - 2]);
                     tempMoveTable.push(this.moveTable[this.moveTable.length - 1]);
-
+                    
                     this.result = eval(this.convertToEquation(tempMoveTable));
                     // this.screen.next(this.result.toString());
                 }
+                this.displayedEq = this.result.toString();
                 this.gottenResult = true;
                 break;
             case 'return':
