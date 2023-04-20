@@ -17,6 +17,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    transition-duration: 0.1s;
 }
 
 .return{
@@ -25,5 +26,11 @@
     background-size: contain;
     background-repeat: no-repeat;
     width: 5vw;
+    height: 11.42vw;
     margin-inline: 3.21vw;
+}
+
+.clicked{
+    background-color: white;
+    color: black;
 }
