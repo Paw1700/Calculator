@@ -85,7 +85,6 @@ export class CalculatorComponent {
             case 'result':
                 if (!this.gottenResult) {
                     this.result = eval(this.convertToEquation(this.moveTable));
-                    // this.screen.next(this.result.toString());
                 } else if(this.moveTable[this.moveTable.length - 2] !== undefined) {
                     let tempMoveTable: string[] = [this.result.toString()];
                     
@@ -93,7 +92,6 @@ export class CalculatorComponent {
                     tempMoveTable.push(this.moveTable[this.moveTable.length - 1]);
                     
                     this.result = eval(this.convertToEquation(tempMoveTable));
-                    // this.screen.next(this.result.toString());
                 }
                 this.displayedEq = this.result.toString();
                 this.gottenResult = true;
@@ -209,7 +207,6 @@ export class CalculatorComponent {
             }
         }
         if (move !== 'result') { // RESULT SENT VALUE TO SCREEN BY HIMSELF
-            // this.screen.next(this.moveTable.join(','));
             if(!this.moveTableNotEmpty()){
                 this.displayedEq = '0';
             } else {
