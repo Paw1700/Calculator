@@ -1,13 +1,13 @@
 <div class="calculator">
     <div class="equation">
-        <equation></equation>
+        <equation [displayedEq]="displayedEq"></equation>
     </div>
     <div class="modes">
         <modes></modes>
     </div>
     <div class="calcButtons">
         <div class="operations">
-            <operations></operations>
+            <operations (btnClicked)="buttonClicked($event)"></operations>
         </div>
         <div class="keyboard">
             <numKeyboard (btnClicked)="buttonClicked($event)"></numKeyboard>
