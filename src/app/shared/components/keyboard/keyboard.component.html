@@ -1,16 +1,16 @@
 <div class="keyboard">
     <div class="numbers">
-        <div class="button" (click)="this.buttonClicked('7')">7</div>
-        <div class="button" (click)="this.buttonClicked('8')">8</div>
-        <div class="button" (click)="this.buttonClicked('9')">9</div>
-        <div class="button" (click)="this.buttonClicked('4')">4</div>
-        <div class="button" (click)="this.buttonClicked('5')">5</div>
-        <div class="button" (click)="this.buttonClicked('6')">6</div>
-        <div class="button" (click)="this.buttonClicked('1')">1</div>
-        <div class="button" (click)="this.buttonClicked('2')">2</div>
-        <div class="button" (click)="this.buttonClicked('3')">3</div>
-        <div class="button" (click)="this.buttonClicked('0')">0</div>
-        <div class="button" (click)="this.buttonClicked('comma')">,</div>
-        <div class="button return" (click)="this.buttonClicked('return')"></div>
+        <div class="button" [ngClass]="{'clicked': keyClicked === '7'}" (click)="this.buttonClicked('7')">7</div>
+        <div class="button" [ngClass]="{'clicked': keyClicked === '8'}" (click)="this.buttonClicked('8')">8</div>
+        <div class="button" [ngClass]="{'clicked': keyClicked === '9'}" (click)="this.buttonClicked('9')">9</div>
+        <div class="button" [ngClass]="{'clicked': keyClicked === '4'}" (click)="this.buttonClicked('4')">4</div>
+        <div class="button" [ngClass]="{'clicked': keyClicked === '5'}" (click)="this.buttonClicked('5')">5</div>
+        <div class="button" [ngClass]="{'clicked': keyClicked === '6'}" (click)="this.buttonClicked('6')">6</div>
+        <div class="button" [ngClass]="{'clicked': keyClicked === '1'}" (click)="this.buttonClicked('1')">1</div>
+        <div class="button" [ngClass]="{'clicked': keyClicked === '2'}" (click)="this.buttonClicked('2')">2</div>
+        <div class="button" [ngClass]="{'clicked': keyClicked === '3'}" (click)="this.buttonClicked('3')">3</div>
+        <div class="button" [ngClass]="{'clicked': keyClicked === '0'}" (click)="this.buttonClicked('0')">0</div>
+        <div class="button" [ngClass]="{'clicked': keyClicked === 'comma'}" (click)="this.buttonClicked('comma')">,</div>
+        <div class="button" [ngClass]="{'clicked': keyClicked === 'return'}" (click)="this.buttonClicked('return')"><div class="return"></div></div>
     </div>
 </div>
