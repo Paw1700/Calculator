@@ -16,11 +16,15 @@
 .button {
     width: 11.42vw;
     height: 11.42vw;
-    /* border: 1px solid #979797; */
     font-size: 6.34vw;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.clicked{
+    background-color: white;
+    color: black;
 }
 
 .xPowerOf{

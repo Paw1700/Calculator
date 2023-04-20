@@ -8,7 +8,13 @@ import { Component, EventEmitter, Output } from "@angular/core";
 export class OperationsComponent{
     @Output() btnClicked = new EventEmitter<string>();
 
+    keyClicked: string | null = null;
+
     buttonClicked(move: string): void{
+        this.keyClicked = move;
         this.btnClicked.emit(move);
+        setTimeout(() => {
+            this.keyClicked = null;
+        },100);
     }
 }
