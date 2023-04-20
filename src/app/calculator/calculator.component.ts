@@ -213,7 +213,7 @@ export class CalculatorComponent {
             if(!this.moveTableNotEmpty()){
                 this.displayedEq = '0';
             } else {
-                this.displayedEq = this.convertToEquation(this.moveTable);
+                this.displayedEq = this.convertToDisplayedEq(this.moveTable);
             }
         }
 
@@ -224,7 +224,6 @@ export class CalculatorComponent {
         this.gottenResult = true;
         this.openBracket = false;
         this.addMultiplyAfterBracket = false;
-        // this.screen.next('0');
         this.moveTable = [];
         this.result = 0;
     }
@@ -254,5 +253,25 @@ export class CalculatorComponent {
 
     private convertToEquation(table: string[]): string { // USED FOR TRANSFOMRING MOVE TABLE TO STRING FOR JS TO CALCULATE RESULT
         return table.join('');
+    }
+
+    private convertToDisplayedEq(table: string[]): string{
+        let eq = '';
+        for(let move of table){
+            switch(move){
+                case '+':
+                case '-':
+                case '/':
+                    eq = eq + ' ' + move + ' ';
+                    break;
+                case '*':
+                    eq = eq + ' × ';
+                    break;
+                default: 
+                    eq += move;
+                    break;
+            }
+        }
+        return eq;
     }
 }
