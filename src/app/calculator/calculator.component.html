@@ -7,7 +7,7 @@
     </div>
     <div class="calcButtons">
         <div class="operations">
-            <operations ></operations>
+            <operations (btnClicked)="buttonClicked($event)"></operations>
         </div>
         <div class="keyboard">
             <numKeyboard (btnClicked)="buttonClicked($event)"></numKeyboard>

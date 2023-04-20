@@ -1,5 +1,4 @@
-import { Component } from "@angular/core";
-import { CalculatorService } from "../calculator.service";
+import { Component, EventEmitter, Output } from "@angular/core";
 
 @Component({
     selector: 'operations',
@@ -7,5 +6,9 @@ import { CalculatorService } from "../calculator.service";
     styleUrls: ['./operations.component.scss']
 })
 export class OperationsComponent{
-    constructor(public cS: CalculatorService) { }
+    @Output() btnClicked = new EventEmitter<string>();
+
+    buttonClicked(move: string): void{
+        this.btnClicked.emit(move);
+    }
 }
