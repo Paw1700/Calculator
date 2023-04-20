@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, EventEmitter, Output } from "@angular/core";
 
 @Component({
     selector: 'modes',
@@ -6,5 +6,9 @@ import { Component } from "@angular/core";
     styleUrls: ['./modes.component.scss']
 })
 export class ModesComponent{
+    @Output() convType = new EventEmitter<string>();
 
+    chConvType(convType: string){
+        this.convType.emit(convType);
+    }
 }

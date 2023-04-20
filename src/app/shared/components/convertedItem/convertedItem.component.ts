@@ -6,6 +6,6 @@ import { ConvertedItem } from "../../models/convertedItem.model";
     templateUrl: './convertedItem.component.html',
     styleUrls: ['./convertedItem.component.scss']
 })
-export class ConvertedItemComponent{
-    @Input() item: ConvertedItem = new ConvertedItem(false, '', '', '');
+export class ConvertedItemComponent {
+    @Input() item: ConvertedItem = new ConvertedItem(false, false, 0, false, 0, '', '', 0);
 }
