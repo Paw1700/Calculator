@@ -70,6 +70,21 @@ export class ConverterComponent implements OnInit {
                     new ConvertedItem(false, false, 1, true, -273.15, 'Cecjusza', 'C', -273.15),
                     new ConvertedItem(false, false, 1.8, true, -459.67, 'Faranhaiet', 'F', -459.67),
                 ]
+            },
+            {
+                unitType: 'length',
+                allowMinus: false,
+                units: [
+                    new ConvertedItem(true, false, 1609.344, false, 0, 'Mil', 'mil', 0),
+                    new ConvertedItem(false, false, 1852, false, 0, 'Mil morska', 'nmil', 0),
+                    new ConvertedItem(false, false, 0.9144, false, 0, 'Jard', 'yd', 0),
+                    new ConvertedItem(false, false, 0.3048, false, 0, 'Stopa', 'ft', 0),
+                    new ConvertedItem(false, false, 1000, false, 0, 'Kilometr', 'km', 0),
+                    new ConvertedItem(false, true, 1, false, 0, 'Metr', 'm', 0),
+                    new ConvertedItem(false, false, 0.01, false, 0, 'Centymetr', 'cm', 0),
+                    new ConvertedItem(false, false, 0.001, false, 0, 'Minimetry', 'mm', 0),
+                    new ConvertedItem(false, false, 0.0254, false, 0, 'Cal', 'inch', 0),
+                ]
             }
         ]
 
@@ -133,6 +148,7 @@ export class ConverterComponent implements OnInit {
         }
         switch (this.convserionType) {
             case 'time':
+            case 'length':
             case 'temperature':
             case 'power':
                 let indexOfChoosedUnit = this.Units[this.indexOfWantedTypeUnit].units.findIndex(unit => unit.active === true)
