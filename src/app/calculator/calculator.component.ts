@@ -52,7 +52,6 @@ export class CalculatorComponent {
                 if (this.moveTableNotEmpty()) {
                     if (!this.moveTable[this.moveTable.length - 1].includes('.')) {
                         this.moveTable[this.moveTable.length - 1] += '.';
-
                     }
                 } else {
                     this.moveTable.push('0.');
@@ -87,6 +86,7 @@ export class CalculatorComponent {
                 if (!this.gottenResult) {
                     this.result = eval(this.convertToEquation(this.moveTable));
                     // this.screen.next(this.result.toString());
+                    this.displayedEq = this.result.toString();
                 } else {
                     let tempMoveTable: string[] = [this.result.toString()];
 
@@ -119,8 +119,6 @@ export class CalculatorComponent {
                         else {
                             this.moveTable.pop();
                         }
-                    } else {
-                        // this.screen.next('0');
                     }
                 }
                 break;
@@ -151,10 +149,72 @@ export class CalculatorComponent {
                     this.moveTable[this.moveTable.length - 1] = (+this.moveTable[this.moveTable.length - 1] * -1).toString();
                 }
                 break;
+            //
+            //
+            //* ADVANDED MATH
+            //
+            //
+            case 'powerOf2':
+                if (this.moveTableNotEmptyAndLastMoveIsANumber()) {
+                    this.moveTable[this.moveTable.length - 1] = (Math.pow(+this.moveTable[this.moveTable.length - 1], 2)).toString();
+                }
+                break;
+            case 'powerOf3':
+                if (this.moveTableNotEmptyAndLastMoveIsANumber()) {
+                    this.moveTable[this.moveTable.length - 1] = (Math.pow(+this.moveTable[this.moveTable.length - 1], 3)).toString();
+                }
+                break;
+            case 'sqrt':
+                if (this.moveTableNotEmptyAndLastMoveIsANumber()) {
+                    this.moveTable[this.moveTable.length - 1] = (Math.sqrt(+this.moveTable[this.moveTable.length - 1])).toString();
+                }
+                break;
+            case 'cbrt':
+                if (this.moveTableNotEmptyAndLastMoveIsANumber()) {
+                    this.moveTable[this.moveTable.length - 1] = (Math.cbrt(+this.moveTable[this.moveTable.length - 1])).toString();
+                }
+                break;
+            case 'factorial':
+                if (this.moveTableNotEmptyAndLastMoveIsANumber()) {
+                    let tempMoveTable: string[] = [];
+                    let lastMoveInTable = this.moveTable[this.moveTable.length - 1];
+                    if (lastMoveInTable === '0') {
+                        this.moveTable[this.moveTable.length - 1] = '1';
+                    } else {
+                        for (let i = 1; i <= +lastMoveInTable; i++) {
+                            if (i !== 1) {
+                                tempMoveTable.push(" * ");
+                            }
+                            tempMoveTable.push(i.toString());
+                        }
+                        this.moveTable[this.moveTable.length - 1] = eval(this.convertToEquation(tempMoveTable)).toString();
+                    }
+                }
+                break;
+            case 'divide1Of':
+                if (this.moveTableNotEmptyAndLastMoveIsANumber()) {
+                    let lastMoveInTable = this.moveTable[this.moveTable.length - 1];
+                    this.moveTable[this.moveTable.length - 1] = (1 / +lastMoveInTable).toString();
+                }
+                break;
+            default:
+                break;
+        }
+        for (let st of this.newTypedNumberBlockingStrings) { //CHECKING IF MOVE SHOULD SET NEW NUMBER IN MOVE TABLE
+            if (st === move) {
+                this.newTypedNumber = false;
+                break;
+            } else {
+                this.newTypedNumber = true;
+            }
         }
         if (move !== 'result') { // RESULT SENT VALUE TO SCREEN BY HIMSELF
             // this.screen.next(this.moveTable.join(','));
-            this.displayedEq = this.convertToEquation(this.moveTable);
+            if(!this.moveTableNotEmpty()){
+                this.displayedEq = '0';
+            } else {
+                this.displayedEq = this.convertToEquation(this.moveTable);
+            }
         }
 
     }
