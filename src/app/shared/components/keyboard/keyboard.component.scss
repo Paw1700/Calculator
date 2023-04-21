@@ -1,36 +1,45 @@
-.keyboard{
-    display: flex;
-    flex-direction: row;
-    align-items: start;
-}
+.numbers {
+  display: grid;
+  grid-template-columns: 11.42vw 11.42vw 11.42vw;
 
-.numbers{
-    display: grid;
-    grid-template-columns: 11.42vw 11.42vw 11.42vw;
+  @media (orientation: landscape) {
+    grid-template-columns: 11.42vh 11.42vh 11.42vh;
+  }
 }
 
 .button {
-    width: 11.42vw;
-    height: 11.42vw;
-    /* border: 1px solid #979797; */
-    font-size: 6.34vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition-duration: 0.1s;
+  width: 11.42vw;
+  height: 11.42vw;
+  font-size: 6.34vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition-duration: 0.1s;
+
+  @media (orientation: landscape) {
+    width: 11.42vh;
+    height: 11.42vh;
+    font-size: 6.34vh;
+  }
 }
 
-.return{
-    background-image: url(/assets/UI/ICON/SHARED/KEYBOARD/returnArrow.webp);
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    width: 5vw;
-    height: 11.42vw;
-    margin-inline: 3.21vw;
+.return {
+  background-image: url(/assets/UI/ICON/SHARED/KEYBOARD/returnArrow.webp);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 5vw;
+  height: 11.42vw;
+  margin-inline: 3.21vw;
+
+  @media (orientation: landscape) {
+    width: 5vh;
+    height: 11.42vh;
+    margin-inline: 3.21vh;
+  }
 }
 
-.clicked{
-    background-color: white;
-    color: black;
+.clicked {
+  background-color: white;
+  color: black;
 }

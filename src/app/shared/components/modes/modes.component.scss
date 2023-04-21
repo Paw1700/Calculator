@@ -1,38 +1,48 @@
 .bar {
-	border-top: 1px solid #979797;
-	border-bottom: 1px solid #979797;
-	width: 100vw;
-	height: 6.12vh;
-	display: flex;
-	flex-direction: row;
-	justify-content: flex-end;
-	align-items: center;
-	flex-wrap: nowrap;
-	div {
-		&:first-of-type {
-			margin-inline: 3.81vw;
-			margin-left: 0;
-		}
-		width: 7.08vw;
-		height: 5vh;
-		margin-inline: 3.81vw;
-		background-position: center;
-		background-size: contain;
-		background-repeat: no-repeat;
-	}
-	.lengthConv {
-		background-image: url(/assets/UI/ICON/SHARED/MODES/length.webp);
-	}
-	.tempConv {
-		background-image: url(/assets/UI/ICON/SHARED/MODES/temp.webp);
-	}
-	.calculator {
-		background-image: url(/assets/UI/ICON/SHARED/MODES/calculator.webp);
-	}
-	.time {
-		background-image: url(/assets/UI/ICON/SHARED/MODES/time.webp);
-	}
-	.power {
-		background-image: url(/assets/UI/ICON/SHARED/MODES/power.webp);
-	}
+  border-block: 1px solid #979797;
+  width: 100vw;
+  height: 6.12vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  flex-wrap: nowrap;
+
+  @media (orientation: landscape) {
+    flex-direction: column;
+    height: 100vh;
+    width: 6.12vw;
+    border-inline: 1px solid #979797;
+    border-block: 0;
+  }
+
+  div {
+    width: 7.08vw;
+    height: 5vh;
+    margin-inline: 3.81vw;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    @media (orientation: landscape) {
+		height: 5vw;
+		width: 7.08vh;
+		margin-block: 3.81vh;
+    }
+  }
+  .lengthConv {
+    background-image: url(/assets/UI/ICON/SHARED/MODES/length.webp);
+  }
+  .tempConv {
+    background-image: url(/assets/UI/ICON/SHARED/MODES/temp.webp);
+  }
+  .calculator {
+    background-image: url(/assets/UI/ICON/SHARED/MODES/calculator.webp);
+  }
+  .time {
+    background-image: url(/assets/UI/ICON/SHARED/MODES/time.webp);
+  }
+  .power {
+    background-image: url(/assets/UI/ICON/SHARED/MODES/power.webp);
+  }
 }
