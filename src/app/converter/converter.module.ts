@@ -3,6 +3,7 @@ import { NgModule } from "@angular/core";
 import { SharedModule } from "../shared/shared.module";
 import { ConverterComponent } from "./converter.component";
 import { RouterModule, Routes } from "@angular/router";
+import { ConvertedItemComponent } from "./convertedItem/convertedItem.component";
 
 const route: Routes = [
     {path: ':conversionType', component: ConverterComponent},
@@ -10,7 +11,8 @@ const route: Routes = [
 
 @NgModule({
     declarations:[
-        ConverterComponent
+        ConverterComponent,
+        ConvertedItemComponent
     ],
     imports: [
         CommonModule,

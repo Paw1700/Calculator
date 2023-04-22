@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from "@angular/core";
-import { ConvertedItem } from "../../models/convertedItem.model";
+import { ConvertedItem } from "../../shared/models/convertedItem.model";
 
 @Component({
     selector: 'convertedItem',
