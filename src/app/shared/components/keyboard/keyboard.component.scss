@@ -5,6 +5,10 @@
   @media (orientation: landscape) {
     grid-template-columns: 11.42vh 11.42vh 11.42vh;
   }
+
+  @media (max-width: 475px) and (orientation: portrait){
+    grid-template-columns: 20vw 20vw 20vw;
+  }
 }
 
 .button {
@@ -19,6 +23,12 @@
   @media (orientation: landscape) {
     width: 11.42vh;
     height: 11.42vh;
+    font-size: 6.34vh;
+  }
+
+  @media (max-width: 475px) and (orientation: portrait){
+    width: 20vw;
+    height: 20vw;
     font-size: 6.34vh;
   }
 }
@@ -36,6 +46,11 @@
     width: 5vh;
     height: 11.42vh;
     margin-inline: 3.21vh;
+  }
+
+  @media (max-width: 475px) and (orientation: portrait){
+    width: 10vw;
+    height: 10vw;
   }
 }
 

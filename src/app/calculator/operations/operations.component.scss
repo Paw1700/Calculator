@@ -1,11 +1,13 @@
 .operationsBlock {
   display: grid;
-  //   flex-direction: row;
 
   @media (orientation: landscape) {
     overflow-x: scroll;
     width: 34.26vh;
-    // flex-direction: row-reverse;
+  }
+
+  @media (max-width: 475px) and (orientation: portrait){
+    width: 100%;
   }
 }
 
@@ -18,6 +20,10 @@
     grid-template-columns: repeat(2, 11.42vh);
     grid-area: 1/2;
   }
+  @media (max-width: 475px) and (orientation: portrait){
+    grid-template-columns: repeat(3,20vw);
+    grid-area: 1/2;
+  }
 }
 
 .operations {
@@ -27,6 +33,11 @@
 
   @media (orientation: landscape) {
     grid-template-columns: repeat(2, 11.42vh);
+    grid-area: 1/1;
+  }
+
+  @media (max-width: 475px) and (orientation: portrait){
+    grid-template-columns: repeat(2, 20vw);
     grid-area: 1/1;
   }
 }
@@ -42,6 +53,12 @@
   @media (orientation: landscape) {
     width: 11.42vh;
     height: 11.42vh;
+    font-size: 6.34vh;
+  }
+
+  @media (max-width: 475px) and (orientation: portrait){
+    width: 20vw;
+    height: 20vw;
     font-size: 6.34vh;
   }
 }

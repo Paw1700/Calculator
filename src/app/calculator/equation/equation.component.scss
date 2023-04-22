@@ -19,4 +19,8 @@
     margin: 4vh;
     width: 92vh;
   }
+
+  @media (max-width: 475px) and (orientation: portrait){
+    font-size: 8vh;
+  }
 }

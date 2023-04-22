@@ -28,6 +28,10 @@
   @media (orientation: landscape) {
     flex-direction: column;
   }
+
+  @media (max-width: 475px) and (orientation: portrait){
+    
+  }
 }
 
 .keyboard {
@@ -39,5 +43,11 @@
     justify-content: flex-end;
     border-left: 0;
     border-top: 1px solid #979797;
+  }
+}
+
+.operations{
+  @media (max-width: 475px) and (orientation: portrait){
+    overflow-x: scroll;
   }
 }
